@@ -1,0 +1,18 @@
+@mixin image($url, $height) {
+    height: $taskbar-height;
+    width: 49px;
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $height $height;
+}
+@mixin image-wh($url, $width, $height) {
+    @include image($url, $height);
+    background-size: $width $height;
+}
+@mixin center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

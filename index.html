@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Windows 10 dekstop in pure css</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <div class="icons">
+            <div class="icons-left">
+                <a href="#start-menu-modal" id="start-menu"><i class="fab fa-windows"></i></a>
+                <a href="#search" id="search"></a>
+                <a href="#tabs" id="tabs-windows"></a>
+                <a href="#" class="px"></a>
+                <a href="#folder" id="folder" class="border"></a>
+                <a href="#chrome-pop-up" id="chrome" class="border"></a>
+            </div>
+            <div class="icons-right">
+                    <a href="#up" id="up" class="small-icons"><i class="fas fa-chevron-up"></i></a>
+                    <a href="#sound-modal" id="sound" class="small-icons"></a>
+                    <a href="#wifi-modal" id="wifi" class="small-icons"></a>
+                    <div class="datetime">
+                        <span class="hour">
+                            23:58
+                        </span>
+                        <span class="date">
+                            03/05/2018
+                        </span>
+                    </div>
+                    <a href="#notifications" id="notifications"><i class="far fa-bell"></i></a>
+                    <a href="#" class="clear disabled"></a>
+                    <a href="#" id="return"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop -->
+    <div class="desktop">
+
+        <!-- Icons on the desktop -->
+        <div class="icons-dekstop">
+            <div class="icon-desktop">
+                <a href="#chrome-pop-up"><img src="https://cdn0.iconfinder.com/data/icons/jfk/512/chrome-512.png" alt=""><span>Google</span></a>
+            </div>
+            <div class="icon-desktop">
+                <a href="#chrome-pop-up"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Visual_Studio_Code_0.10.1_icon.png" alt=""><span>Code</span></a>
+            </div>
+            <div class="icon-desktop">
+                <a href="#chrome-pop-up"><img src="https://image.noelshack.com/fichiers/2018/18/6/1525513595-screenshot-5.png" alt=""><span>Hard drive</span></a>
+            </div>
+            <div class="icon-desktop">
+                <a href="#chrome-pop-up"><img src="https://image.noelshack.com/fichiers/2018/18/6/1525514340-screenshot-6.png" alt=""><span>Recycle bin</span></a>
+            </div>
+        </div>
+
+        <!-- Speakers -->
+        <div id="sound-modal">
+            <div class="sound-text">
+                <span>Speakers</span>
+            </div>
+            <div class="sound-progress">
+                <i class="fas fa-volume-up"></i>
+                <div class="bar-sound"></div>
+                <div class="bar-sound-drag"></div> 
+                <span class="data-value">50%</span>   
+            </div>
+        </div>
+
+        <!-- Wifi -->
+        <div id="wifi-modal">
+                <div class="list-networks">
+                    <div class="networks">
+                        <div class="icons-wifi">
+                        <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="text-wifi">
+                            <span class="name-wifi">Wifi</span>
+                            <span class="type-wifi">Connected, securised</span>
+                            <span class="propriety">Propriety</span>
+                            <button>Disconnect</button>
+                        </div>
+                    </div>
+                    <div class="networks">
+                            <div class="icons-wifi">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                        <span class="name-wifi">Wifi</span>
+                        <span class="type-wifi">Open</span>
+                    </div>
+                    <div class="networks">
+                            <div class="icons-wifi">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                        <span class="name-wifi">Wifi</span>
+                        <span class="type-wifi">Open</span>
+                    </div>
+                    <div class="options-wifi">
+                        <div class="options-wifi-text">
+                            <span>Options internet & security</span>
+                            <span>Modify options, for a better connection</span>
+                        </div>
+                        <div class="options-bloc">
+                            <div class="bloc-options">
+                                <i class="fas fa-wifi"></i>
+                                <span>Wifi</span>
+                            </div>
+                            <div class="bloc-options">
+                                <i class="fas fa-plane"></i>
+                                <span>Plane mode</span>
+                            </div>
+                            <div class="bloc-options">
+                                <i class="fab fa-bluetooth-b"></i>
+                                <span>Bluetooth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <!-- Chrome -->
+    <div class="chrome" id="chrome-pop-up">
+        <div class="pop-up">
+
+            <!-- Taskbar chrome-->
+            
+            <!-- Top -->
+            <div class="chrome-top">
+                <div class="chrome-tabs">
+                    <div class="triangle"></div>
+                    <div class="tabs">
+                        <span class="icons-tabs">
+                            <i class="fab fa-codepen"></i>
+                        </span>
+                        <span class="text-tabs">CodePen</span>
+                        <span class="close-tabs">x</span>
+                    </div>
+                    <div class="triangle-2"></div>
+                    <div class="new-tabs"></div>
+                </div>
+                <div class="chrome-close">
+                    <a href="#"><i class="fas fa-minus"></i></a>
+                    <a href="#"><i class="far fa-window-restore"></i></a>
+                    <a href="#"><i class="fas fa-times"></i></a>
+                </div>
+            </div>
+            <!-- Bottom -->
+            <div class="chrome-bottom">
+                <div class="options-bar">
+                    <div class="icons-bar">
+                        <div class="arrows">
+                            <a href="#"><i class="fas fa-arrow-left"></i></a>
+                            <a href="#"><i class="fas fa-arrow-right"></i></a>
+                            <a href="#"><i class="fas fa-sync"></i></a>
+                        </div>
+                        <div class="search-bar">
+                            <span class="info"><i class="fas fa-lock"></i> Securised</span>
+                            <input type="text" value="http://codepen.io/Guklam">
+                            <span class="star"><i class="far fa-star"></i></span>
+                        </div>
+                        <div class="points-bar">
+                            <div class="points">
+                                <span>•</span>
+                                <span>•</span>
+                                <span>•</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bookmarks">
+                            <div class="folder-book">
+                                <a target="_blank" href="https://purecss.io/"><span>P</span> Pure</a>
+                            </div>
+                            <div class="folder-book">
+                                <a target="_blank" href="https://developer.mozilla.org/fr/docs/Web/CSS"><i class="fab fa-css3-alt"></i> CSS</a>
+                            </div>
+                            <div class="folder-book">
+                                <a target="_blank" href="https://www.microsoft.com/fr-fr/windows"><i class="fab fa-windows"></i> Windows 10</a>
+                            </div>
+                    </div>
+                </div>
+                <!-- Bookmarks -->
+                
+            </div>
+            <iframe src="http://codepen.io/Guklam" frameborder="0" width="895px" height="404px"></iframe>
+        </div> 
+    </div>
+
+    <!-- Start menu -->
+    <div id="start-menu-modal">
+        <div id="user">
+            <a class="push" href="#"><i class="fas fa-bars"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+            <a href="#"><i class="fas fa-cog"></i></a>
+            <a href="#"><i class="fas fa-power-off"></i></a>
+        </div>
+        <div id="apps">
+            Test
+        </div>
+        <div id="others">
+            Test
+        </div>
+    </div>
+</body>
+</html>

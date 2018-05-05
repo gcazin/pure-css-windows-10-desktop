@@ -1,0 +1,28 @@
+@import "components/_variables";
+@import "components/_mixins";
+
+/* ==========================================================================
+    General
+========================================================================== */
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+.desktop {
+    height: $screen-height;
+    background: url(https://upstream.se/wp-content/uploads/2015/08/Windows-10-wallpapers-in-4K.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+@import "components/_taskbar";
+
+@import "components/_desktop";
+
+@import "components/_chrome";

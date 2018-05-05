@@ -1,0 +1,276 @@
+/* ==========================================================================
+    Chrome
+========================================================================== */
+#chrome-pop-up {
+    @include center();
+    height: 500px;
+    width: 900px;
+    background: $white;
+    visibility: hidden;
+    border: 2px solid $midnight;
+    z-index: 1;
+    resize: both;
+    overflow-y: hidden;
+    &:target {
+        visibility: visible;
+    }
+    iframe {
+        height: 100vh;
+        width: 100%;
+    }
+}
+.chrome-top {
+    height: 30px;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid $grey;
+}
+.chrome-tabs {
+    float: left;
+    position: relative;
+    margin-left: 12px;
+    .tabs {
+        padding-top: 6px;
+        padding-left: 12px;
+        padding-right: 6px;
+        padding-bottom: 6px;
+        width: 180px;
+        background: $light_grey;
+        cursor: default;
+        .text-tabs {
+            font-size: 12px;
+            margin-left: 3px;
+            vertical-align: text-bottom;
+        }
+        .close-tabs {
+            float: right;
+            margin-right: 10px;
+            height: 15px;
+            width: 15px;
+            text-align: center;
+            line-height: 0.9;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 50%;
+            font-weight: 500;
+            font-family: monospace;
+            &:hover {
+                background: rgba(255, 0, 0, 0.781);
+                color: $white;
+                padding: 1px;
+            }
+        }
+        &:before {
+            content: " ";
+            position: absolute;
+            left: -33px;
+            bottom: 0;
+            background: $grey;
+            width: 64px;
+            height: 1px;
+            transform: rotate(104deg);
+        }
+        &:after {
+            content: " ";
+            position: absolute;
+            right: -31px;
+            bottom: 0;
+            background: $grey;
+            width: 64px;
+            height: 1px;
+            transform: rotate(70deg);
+        }
+        .icons-tabs img {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+.new-tabs {
+    width: 26px;
+    height: 15px;
+    background: #ccc;
+    transform: skew(27deg);
+    position: absolute;
+    top: 7px;
+    right: -30px;
+    border: 1px solid $grey;
+    border-radius: 2px;
+    &:hover {
+        background: rgba(128, 128, 128, 0.3);
+    }
+}
+.chrome-close {
+    display: flex;
+    justify-content: flex-end; 
+    a {
+        text-decoration: none;
+        font-size: 11px;
+        padding: 8px 24px 7px 24px;
+        color: $grey;
+        &:hover:not(:last-child) {
+            background: #dfdfdf;
+            color: black;
+        }
+        &:hover:last-child {
+            background: rgba(255, 0, 0, 0.781);
+            color: $white;
+        }
+        &:not(:first-child) {
+            margin-left: -4px;
+        }
+    }
+}
+.triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 7px solid $white;
+}
+.triangle-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 10px solid $white;
+    transform: scaleX(-1);
+}
+.chrome-bottom {
+    background: #f2f2f2;
+    height: 62px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    .options-bar {
+        height: calc(62px / 2);
+        width: 100%;
+        a {
+            text-decoration: none;
+            border-radius: 3px;
+            &:hover {
+                background: rgb(223,223,223);
+            }
+        }
+        .icons-bar {
+            padding: 3px;
+            margin-left: 4px;
+            display: flex;
+            flex-wrap: nowrap;
+            .arrows {
+                flex: 0 0 85px;
+                flex-direction: row;
+                align-self: center;
+                a  {
+                    color: rgb(90,90,90);
+                    padding: 4px;
+                }
+            }
+        }
+        .search-bar {
+            flex: 0 0 91%;
+            input {
+                border: 1px solid $grey;
+                border-radius: 4px;
+                padding: 8px;
+                width: 100%;
+                text-indent: 87px;
+                &:focus {
+                    outline: none;
+                }
+            }
+            .info {
+                position: absolute;
+                font-size: 12px;
+                color: #27ae60;
+                border-right: 1px solid rgba(128, 128, 128, 0.808);
+                padding: 9px;
+                cursor: default;
+                &:hover {
+                    background: rgba(128, 128, 128, 0.2);
+                }
+            }
+            .star {
+                position: absolute;
+                font-size: 12px;
+                color: $grey;
+                padding: 6px;
+                top: 3px;
+                right: 11px;
+                border-radius: 2px;
+                cursor: default;
+                &:hover {
+                    background: rgba(128, 128, 128, 0.2);
+                }
+            }
+        }
+        .points-bar {
+            border-radius: 3px;
+            a {
+                color: rgb(90,90,90);
+            }
+            .points {
+                display: inline-flex;
+                transform: rotate(90deg);
+                cursor: default;
+                color: $grey;
+                padding: 3px;
+                border-radius: 3px;
+            }
+            &:hover {
+                background: rgba(128, 128, 128, 0.2);
+            }
+        }
+    }
+    .bookmarks {
+        flex: 0 0 24%;
+        background: $light_grey;
+        .folder-book {
+            cursor: default;
+            border-radius: 1px;
+            display: inline;
+            a {
+                font-size: 12px;
+                padding-right: 8px;
+                color: rgba(0, 0, 0, 0.836);
+                cursor: default;
+                padding-bottom: 3px;
+            }
+            i {
+                padding: 1px 8px 0px 10px;
+                font-size: 16px;
+                vertical-align: bottom;
+                &.fa-css3-alt {
+                    color: rgb(27,115,186);
+                }
+                &.fa-windows {
+                    color: $grey;
+                }
+            }
+            &:hover {
+                background: rgb(223,223,223);
+            }
+            &:first-child {
+                margin-left: 4px;
+                a {
+                    vertical-align: baseline;
+                }
+            }
+            span {
+                background: rgb(31,141,214);
+                padding: 1px 3px 0px 3px;
+                font-size: 13px;
+                color: $white;
+                vertical-align: text-top;
+                margin-right: 8px;
+                margin-left: 8px;
+            }
+        }
+    }
+}

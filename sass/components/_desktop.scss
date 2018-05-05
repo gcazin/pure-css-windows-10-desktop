@@ -1,0 +1,250 @@
+/* ==========================================================================
+    Desktop
+========================================================================== */
+.desktop {
+    display: flex;
+    .icon-desktop {
+        padding: 4px 8px 4px 8px;
+        border: 2px solid transparent;
+        text-align: center;
+        margin-bottom: 32px;
+        a {
+            display: block;
+            text-decoration: none;
+        }
+        img {
+            height: 48px;
+            width: 48px;
+        }
+        span {
+            display: block;
+            color: $white;
+            font-size: 11px;
+            text-align: center;
+        }
+        &:hover {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        &:first-child {
+            margin-top: 5px;
+        }
+    }
+    #sound-modal {
+        background: $midnight;
+        position: absolute;
+        right: 0;
+        bottom: $taskbar-height;
+        height: 100px;
+        width: 380px;
+        visibility: hidden;
+        i {
+            @include center();
+            left: -20px !important;
+            color: $whitesmoke;
+        }
+        span.data-value {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            transform: translateY(-50%);
+            color: $whitesmoke;
+        }
+        .sound-text {
+            text-align: center;
+            margin-top: 15px;
+            color: $whitesmoke;
+        }
+        .sound-progress {
+            @include center();
+            top: 70%;
+            .bar-sound {
+                width: 230px;
+                height: 5px;
+                background: linear-gradient(to right, #1e5799 0%,#2989d8 50%,$grey 51%,$grey 51%);
+            }
+            .bar-sound-drag {
+                height: 18px;
+                width: 5px;
+                background: #1e5799;
+                @include center();
+                border-radius: 3px;
+            }
+        }
+        &:target {
+            visibility: visible;
+        }
+        &:hover .bar-sound-drag {
+            background: $white;
+        }
+    }
+}
+
+/* Wifi */
+#wifi-modal {
+    background: $midnight;
+    position: absolute;
+    right: 0;
+    bottom: $taskbar-height;
+    height: 600px;
+    width: 380px;
+    color: $white;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    &:target {
+        visibility: visible !important;
+    }
+        .list-networks {
+            .networks {
+                padding: 20px;
+                cursor: default;
+                i {
+                    transform: rotate(45deg);
+                    font-size: 25px;
+                }
+                &:first-child {
+                    background: rgba(255, 255, 255, 0.1);
+                }
+                &:hover {
+                    background: rgba(255, 255, 255, 0.15);
+                }
+                span {
+                    &.name-wifi {
+                        font-size: 18px;
+                    }
+                    &.type-wifi {
+                        display: block;
+                        font-size: 15px;
+                        color: rgba(245, 245, 245, 0.644);
+                    }
+                }
+                .text-wifi {
+                    display: inline-block;
+                    position: relative;
+                    width: 80%;
+                }
+                .icons-wifi {
+                    float: left;
+                    padding: 10px 10px 0px 0px;
+                    margin-right: 15px;
+                }
+                .propriety {
+                    font-size: 15px;
+                    color: rgba(245, 245, 245, 0.6);
+                    display: block;
+                    margin-top: 10px;
+                    text-decoration: underline;
+                    cursor: pointer;
+                    &:hover {
+                        color: rgba(245, 245, 245, 0.9);
+                    }
+                }
+                button {
+                    display: block;
+                    color: $white;
+                    background: rgba(128, 128, 128, 0.404);
+                    border: 2px solid transparent;
+                    padding-left: 40px;
+                    padding-right: 40px;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                    font-size: 15px;
+                    float: right;
+                    margin-top: 10px;
+                    &:hover {
+                        border: 2px solid rgba(255, 255, 255, 0.63);
+                    }
+                    &:focus {
+                        background: rgba(128, 128, 128, 0.9);
+                        outline:none;
+                        border: 2px solid transparent;
+                    }
+                }
+            }
+            .options-wifi {
+                position: absolute;
+                bottom: 0;
+                .options-bloc {
+                    display: flex;
+                    flex-direction: row;
+                    .bloc-options {
+                        height: 75px;
+                        width: 95px;
+                        background: rgba(255, 255, 255, 0.1);
+                        margin: 10px 0px 5px 6px;
+                        position: relative;
+                        border: 2px solid transparent;
+                        i {
+                            position: absolute;
+                            top: 10px;
+                            left: 5px;
+                        }
+                        span {
+                            display: block;
+                            position: absolute;
+                            bottom: 3px;
+                            left: 5px;
+                            font-size: 14px;
+                        }
+                        &:first-child {
+                            background: rgba(255, 255, 255, 0.3);
+                        }
+                        &:hover {
+                            border: 2px solid rgba(255, 255, 255, 0.63);
+                        }
+                    }
+                }
+                .options-wifi-text {
+                    margin-left: 6px;
+                    span {
+                        display: block;
+                        font-size: 14px;
+                        color: rgba(245, 245, 245, 0.8);
+                        &:first-child {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                        &:not(:first-child) {
+                            font-size: 12px;
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+        }
+}
+#start-menu-modal {
+    background: $midnight;
+    position: absolute;
+    left: 0;
+    bottom: $taskbar-height;
+    height: 600px;
+    color: $white;
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: 50px 300px 400px;
+    &:target {
+        visibility: visible !important;
+    }
+    #user {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a {
+            color: $grey;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            &:hover {
+                background: black;
+            }
+        }
+        .push {
+            margin-bottom: auto;
+        }
+    }
+}

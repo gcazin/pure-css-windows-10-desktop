@@ -1,0 +1,136 @@
+/* ==========================================================================
+    Taskbar
+========================================================================== */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    height: $taskbar-height;
+    width: 100%;
+    background:$taskbar-colors;
+    // Lefts icons
+    .icons-left {
+        height: $taskbar-height;
+        display: inline-block;
+        // Start menu
+        #start-menu, #tabs-windows {
+            height: $taskbar-height;
+            width: 48px;
+            position: relative;
+            i {
+                @include center();
+                font-size: 21px;
+                color: $white;
+            }
+        }
+        // Search magnifying glass
+        #search {
+            @include image("https://image.noelshack.com/fichiers/2018/18/6/1525514790-698627-icon-111-search-512.png", 26px);
+        }
+        // File explorer
+        #folder {
+            @include image-wh("http://www.iconarchive.com/download/i98291/dakirby309/simply-styled/File-Explorer.ico", 24px, 21px);
+        }
+        // Chrome 
+        #chrome {
+            @include image("https://cdn0.iconfinder.com/data/icons/jfk/512/chrome-512.png", 26px);
+        }
+        // Windows
+        #tabs-windows {
+            @include image-wh("https://image.noelshack.com/fichiers/2018/18/5/1525467821-tabs.png", 23px, 15px);
+            &:hover {
+                @include image-wh("https://image.noelshack.com/fichiers/2018/18/5/1525467821-tabs.png", 30px, 21px);
+            }
+        }
+        // Links
+        a {
+            display: table-cell;
+            border-bottom: 2px solid transparent;
+            &:hover {
+                background-color: $taskbar-colors-hover !important;
+            }
+            &:not(:first-child) {
+                margin-left: -4px;
+            }
+            &.border:hover, &.border:visited {
+                border-bottom: 2px solid rgba(245, 245, 245, 0.651);
+            }
+        }
+        // Space
+        .px {
+            width: 1px;
+            a {
+                pointer-events: none;
+            }
+        }
+    }
+
+    // Right icons
+    .icons-right {
+        height: $taskbar-height;
+        float: right;
+        // Wifi icons 
+        #wifi {
+            @include image("https://image.noelshack.com/fichiers/2018/18/4/1525383811-wifinotificationicon.png", 16px);
+        }
+        // Sound icons 
+        #sound {
+            @include image("https://image.noelshack.com/fichiers/2018/18/4/1525383779-audiotoasticon.png", 22px);
+        }
+        // Return to the desktop 
+        #return {
+            width: 4px;
+            border-left: 1px solid $grey;
+        }
+        // Notifications and arrows
+        #notifications, #up {
+            height: $taskbar-height;
+            width: 42px;
+            position: relative;
+            i {
+                @include center();
+                font-size: 17px;
+                color: $white;
+            }
+        }
+        // Spaces
+        .clear {
+            height: $taskbar-height;
+            width: 7px;
+            display: table-cell;
+        }
+        .disabled {
+            pointer-events: none;
+            cursor: default;
+        }
+        // Date time
+        .datetime {
+            display: table-cell;
+            width: 70px !important;
+            cursor: pointer;
+            padding-top: 3px;
+            span {
+                display: block;
+                text-align: center;
+                margin-top: 5px;
+                font-size: 11.3px;
+                color: $white;
+            }
+            &:hover {
+                background-color: $taskbar-colors-hover !important;
+            }
+        }
+        // Links
+        a {
+            display: table-cell;
+            &:hover {
+                background-color: $taskbar-colors-hover !important;
+            }
+            &:not(:first-child) {
+                margin-left: -4px;
+            }
+        }
+        .small-icons {
+            width: 24px !important;
+        }
+    }
+}
